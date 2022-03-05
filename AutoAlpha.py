@@ -50,7 +50,7 @@ def menu():
 
     yellow()
     time.sleep(1)
-    print("\nPlease Chose What to Installed!")
+    print("\nPlease Chose What to Install!")
     time.sleep(1)
     print("\n1 --> Install All Necessary Drivers and Update System")
     #time.sleep(1)
@@ -63,7 +63,7 @@ def menu():
     if option == "1":
         Autofix()  
     if option == "2":
-        Web()
+        Driversonly()
     if option == "3":
         exit()
     if option == "0":
