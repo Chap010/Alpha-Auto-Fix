@@ -77,7 +77,8 @@ def menu():
 def Autofix():
     green()
     print("[+] Updating and Installing Necessary Drivers ...\n")
-    os.system("sudo apt upgrade -y")
+    os.system("lsusb")
+    os.system("apt update -y && apt upgrade -y && apt dist-upgrade")
     os.system("sudo apt dist-upgrade -y")
     os.system("sudo apt update")
     os.system("sudo apt install realtek-rtl88xxau-dkms")
@@ -86,23 +87,22 @@ def Autofix():
     os.system("cd rtl8812au/")
     os.system("make")
     os.system("sudo make install")
-    os.system("lsusb | iwconfig")
     time.sleep(2)
-    print("[+] System has been Updated and Drivers Installed, Happy Hacking! :)")
+    print("[+] System has been Updated and Drivers Installed, Please Reboot boss Happy Hacking! :)")
 
 # Downloading Alpha Drivers Only
 def Driversonly():
     green()
     print("[+] Installing Alpha Adapter Drivers...\n")
+    os.system("lsusb | iwconfig")
     os.system("sudo apt install realtek-rtl88xxau-dkms")
     os.system("sudo apt install dkms")
     os.system("git clone https://github.com/aircrack-ng/rtl8812au")
     os.system("cd rtl8812au/")
     os.system("make")
     os.system("sudo make install")
-    os.system("lsusb | iwconfig")
     time.sleep(2)
-    print("[+] Drivers Instelled, Happy Hacking!:)")
+    print("[+] Drivers Instelled, Please Reboot boss Happy Hacking!:)")
 
 if __name__ == '__main__':
     menu()
